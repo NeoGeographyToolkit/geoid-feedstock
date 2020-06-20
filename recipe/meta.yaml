@@ -17,9 +17,12 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
+# For OSX use the system compiler, see build.sh more more detail.  
+    - {{ compiler('gfortran') }} # [linux]
   host:
+    - libgfortran 3.*
   run:
+    - libgfortran 3.*
 test:
   commands:
 
