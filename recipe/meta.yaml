@@ -1,0 +1,36 @@
+{% set name = "geoid" %}
+{% set version = "1.0" %}
+{% set sha256 = "2cffdac6efbfa47a94e8adb650489a267de72770f06656df35f37a531d999f5d" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: geoids.tgz
+  url: https://github.com/NeoGeographyToolkit/StereoPipeline/releases/download/geoid1.0/geoids.tgz
+  sha256: {{ sha256 }}
+
+build:
+  number: 1
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('fortran') }}
+  host:
+  run:
+test:
+  commands:
+
+about:
+  home: https://github.com/NeoGeographyToolkit/StereoPipeline
+  license: APACHE
+  summary: 'Library to support geoids in the NASA Ames Stereo Pipeline'
+  doc_url:
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - oleg-alexandrov
+
