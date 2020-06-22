@@ -21,6 +21,7 @@ ${FC} ${FFLAGS} -fPIC -O3 -c interp_2p5min.f
 ${FC} ${LDFLAGS} ${LIB_FLAG} -o libegm2008${EXT} interp_2p5min.o
 
 if [ "$(uname)" = "Darwin" ]; then
+    # Make library paths be relative
     for dep in libgfortran.3 libquadmath.0 libgcc_s.1; do 
         /usr/bin/install_name_tool -change /usr/local/lib/${dep}.dylib \
             @rpath/${dep}.dylib libegm2008${EXT}
