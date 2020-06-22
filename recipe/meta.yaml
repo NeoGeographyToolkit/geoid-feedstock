@@ -17,7 +17,7 @@ build:
 
 requirements:
   build:
-# For OSX use the system compiler, see build.sh more more detail.  
+# For OSX use the local compiler. See build.sh more more detail.  
     - {{ compiler('gfortran') }} # [linux]
   host:
     - libgfortran 3.*
