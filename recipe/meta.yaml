@@ -28,7 +28,7 @@ test:
 
 about:
   home: https://github.com/NeoGeographyToolkit/StereoPipeline
-  license: APACHE
+  license: APACHE II
   summary: 'Library to support geoids in the NASA Ames Stereo Pipeline'
   doc_url:
   dev_url:
