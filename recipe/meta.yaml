@@ -1,5 +1,5 @@
 {% set name = "geoid" %}
-{% set version = "1.0" %}
+{% set version = "1.0_isis7" %}
 {% set sha256 = "2cffdac6efbfa47a94e8adb650489a267de72770f06656df35f37a531d999f5d" %}
 
 package:
@@ -17,12 +17,12 @@ build:
 
 requirements:
   build:
-# For OSX use the local compiler. See build.sh more more detail.  
-    - {{ compiler('gfortran') }} # [linux]
+    - {{ compiler('gfortran') }}
+
   host:
-    - libgfortran 3.*
+
   run:
-    - libgfortran 3.*
+  
 test:
   commands:
 
