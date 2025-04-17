@@ -1,5 +1,5 @@
 {% set name = "geoid" %}
-{% set version = "1.0_isis7" %}
+{% set version = "1.0_asp3.5.0" %}
 {% set sha256 = "2cffdac6efbfa47a94e8adb650489a267de72770f06656df35f37a531d999f5d" %}
 
 package:
