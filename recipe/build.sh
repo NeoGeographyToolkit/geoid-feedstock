@@ -5,15 +5,17 @@ set -x
 if [ "$(uname)" = "Darwin" ]; then
     LIB_FLAG='-dynamiclib'
     EXT='.dylib'
+    FC=$PREFIX/bin/gfortran
 else
     LIB_FLAG='-shared'
     EXT='.so'
+    FC=gfortran
 fi
 
 
 # Build
-${FC} ${FFLAGS} -fPIC -O3 -c interp_2p5min.f
-${FC} ${LDFLAGS} ${LIB_FLAG} -o libegm2008${EXT} interp_2p5min.o
+$FC -fPIC -O3 -c interp_2p5min.f
+$FC ${LIB_FLAG} -o libegm2008${EXT} interp_2p5min.o
 
 # Install
 mkdir -p ${PREFIX}/lib
