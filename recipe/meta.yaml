@@ -12,23 +12,24 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win]
 
 requirements:
   build:
-    - {{ compiler('gfortran') }}  # [linux]
 
   host:
-   # For the Mac it worked only when putting gfortran here, also with version
-    - gfortran 14 # [osx]
-    - libgfortran 14.2.0
-    - llvm-openmp  20.1.3
-    - libgfortran5 14.2.0
+   # Putting the compilers in the host section ensures compatibility with ISIS
+    - c-compiler                1.9.0
+    - compilers                 1.9.0
+    - cxx-compiler              1.9.0
+    - fortran-compiler          1.9.0
+    - llvm-openmp               20.1.3
+    - libgfortran5              14.2.0
   run:
  
-    - llvm-openmp 20.1.3
-    - libgfortran5 14.2.0
+    - llvm-openmp               20.1.3
+    - libgfortran5              14.2.0
 
 test:
   commands:

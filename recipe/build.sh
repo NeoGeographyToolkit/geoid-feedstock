@@ -5,13 +5,12 @@ set -x
 if [ "$(uname)" = "Darwin" ]; then
     LIB_FLAG='-dynamiclib'
     EXT='.dylib'
-    FC=$PREFIX/bin/gfortran
 else
     LIB_FLAG='-shared'
     EXT='.so'
-    FC=gfortran
 fi
 
+FC=$PREFIX/bin/gfortran
 
 # Build
 $FC -fPIC -O3 -c interp_2p5min.f
