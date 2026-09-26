@@ -1,6 +1,6 @@
 {% set name = "geoid" %}
-{% set version = "asp3.5.0" %}
-{% set sha256 = "2cffdac6efbfa47a94e8adb650489a267de72770f06656df35f37a531d999f5d" %}
+{% set version = "asp3.6.0" %}
+{% set sha256 = "0ae08cb83f042d0ee078fb4ec0f895fe99c6b4b026fae72fa531d9b98186ba6d" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   fn: geoids.tgz
-  url: https://github.com/NeoGeographyToolkit/StereoPipeline/releases/download/geoid1.0/geoids.tgz
+  url: https://github.com/NeoGeographyToolkit/StereoPipeline/releases/download/geoid2.0/geoids.tgz
   sha256: {{ sha256 }}
 
 build:
-  number: 6
+  number: 1
   skip: True  # [win]
 
 requirements:

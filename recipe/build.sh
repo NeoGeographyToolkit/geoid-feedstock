@@ -10,11 +10,16 @@ else
     EXT='.so'
 fi
 
-FC=$PREFIX/bin/gfortran
+if [ -z "$FC" ]; then
+  FC=$PREFIX/bin/gfortran
+fi
+if [ ! -x "$FC" ]; then
+  FC=gfortran
+fi
 
 # Build
-$FC -fPIC -O3 -c interp_2p5min.f
-$FC ${LIB_FLAG} -o libegm2008${EXT} interp_2p5min.o
+$FC ${FFLAGS//-pipe/} -fPIC -O3 -c interp_2p5min.f
+$FC ${LDFLAGS} ${LIB_FLAG} -o libegm2008${EXT} interp_2p5min.o
 
 # Install
 mkdir -p ${PREFIX}/lib
