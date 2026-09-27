@@ -1,5 +1,5 @@
 {% set name = "geoid" %}
-{% set version = "asp3.6.0" %}
+{% set version = "asp3.7.0" %}
 {% set sha256 = "0ae08cb83f042d0ee078fb4ec0f895fe99c6b4b026fae72fa531d9b98186ba6d" %}
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
 
 requirements:
